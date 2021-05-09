@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/nosu/flutter_google_code_login']
+  dir: '/workspace'
+
+# To run flutter build apk, one must need to be at the root of the project, the script simply cd to the root before
+# running the build command
+# - name: 'gcr.io/$PROJECT_ID/flutter'
+- name: 'gcr.io/cloud-builders/flutter'
+  entrypoint: '/bin/bash'
+  args: ['build.sh']
+
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['cp', '/workspace/flutter_google_code/build/app/outputs/apk/release/app-release.apk', 'gs://$MY_BUCKET/flutter_google_code_login.apk']
+
+# tags: ['cloud-builders-community']
