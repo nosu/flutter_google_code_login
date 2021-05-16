@@ -9,6 +9,9 @@ steps:
 # - name: 'gcr.io/cloud-builders/flutter'
   entrypoint: '/bin/bash'
   args: ['build.sh']
+  env:
+    - 'CLIENT_ID=${_CLIENT_ID}'
+    - 'CLIENT_SECRET=${_CLIENT_SECRET}'
 
 - name: 'gcr.io/cloud-builders/gsutil'
   args: ['cp', '/workspace/flutter_google_code/build/app/outputs/apk/release/app-release.apk', 'gs://$_BUCKET_NAME/flutter_google_code_login.apk']
