@@ -6,7 +6,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 import 'widgets/main_menu.dart';
 
 Future main() async {
-  await DotEnv.load(mergeWith: Platform.environment);
+  await DotEnv.load();
   runApp(MyApp());
 }
 
