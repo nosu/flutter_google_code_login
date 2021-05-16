@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cd /workspace/flutter_google_code_login && flutter build apk
+cd /workspace/flutter_google_code_login && touch .env && flutter build apk
