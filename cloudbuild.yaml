@@ -14,6 +14,6 @@ steps:
     - 'CLIENT_SECRET=${_CLIENT_SECRET}'
 
 - name: 'gcr.io/cloud-builders/gsutil'
-  args: ['cp', '/workspace/flutter_google_code/build/app/outputs/apk/release/app-release.apk', 'gs://$_BUCKET_NAME/flutter_google_code_login.apk']
+  args: ['cp', '/workspace/flutter_google_code/build/app/outputs/flutter-apk/app-release.apk', 'gs://$_BUCKET_NAME/flutter_google_code_login.apk']
 
 # tags: ['cloud-builders-community']
